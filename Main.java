@@ -8,6 +8,7 @@ public class Main {
         addStudent("Alice");
         addStudent("Bob");
         viewStudents();
+        deleteStudent("Alice");
     }
 
     //Add Students
@@ -22,5 +23,11 @@ public class Main {
             for (String s : students) {
                 System.out.println(s);
             }
+    }
+
+    //Delete Students
+    static void deleteStudent(String name) {
+        students.remove(name);
+        System.out.println(name + " removed.");
     }
 }
