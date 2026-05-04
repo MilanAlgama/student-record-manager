@@ -11,6 +11,7 @@ public class Main {
         deleteStudent("Alice");
         countStudents();
         searchStudent("Bob");
+        updateStudent("Bob", "Bobby");
     }
 
     //Add Students
@@ -53,5 +54,23 @@ public class Main {
             System.out.println(name + " not found. ");
         }
         
+    }
+
+    //Update Students
+    static void updateStudent(String oldName, String newName) {
+        boolean updated = false;
+
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).equalsIgnoreCase(oldName)) {
+                students.set(i, newName);
+                System.out.println(oldName + " updated to " + newName);
+                updated = true;
+                break;
+            }
+        }
+
+        if (!updated) {
+        System.out.println(oldName + " not found.");
+        }
     }
 }
