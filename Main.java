@@ -10,6 +10,7 @@ public class Main {
         viewStudents();
         deleteStudent("Alice");
         countStudents();
+        searchStudent("Bob");
     }
 
     //Add Students
@@ -35,5 +36,22 @@ public class Main {
     //Count Students
     static void countStudents() {
         System.out.println("Total students: " + students.size());
+    }
+
+    //Search students
+    static void searchStudent(String name) {
+        boolean found = false;
+
+        for (String s : students){
+            if (s.equalsIgnoreCase(name)){
+                System.out.println(name + " found.");
+                found = true;
+                break;
+            }
+        }
+        if (!found){
+            System.out.println(name + " not found. ");
+        }
+        
     }
 }
